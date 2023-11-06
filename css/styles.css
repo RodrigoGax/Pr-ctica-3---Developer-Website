@@ -3,7 +3,7 @@
     --oscuro: #212121;
     --primario: #ffc107;
     --secundario: #0097a7;
-    --gris: #757575;
+    --gris: #757576;
 
 }
 
@@ -23,3 +23,52 @@ body{
 .titulo span{
     font-size: 2rem;
 }
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.nav-bg{
+    background-color: var(--secundario);
+}
+
+.navegacion-principal {
+    display: flex;
+    flex-direction: column;
+    /* justify-content es para filas (row) y align-items, para columnas */
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.navegacion-principal a {
+    padding: 1rem;
+    color: var(--blanco);
+    text-decoration: none;   
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+
+}
+
+/*
+Recomendado para Media Query
+480px para móviles
+768px para tablets
+1140px para laptops
+1400px para dispositivos más grandes
+*/
+
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+    }
+ }
+
+
+
+
+
