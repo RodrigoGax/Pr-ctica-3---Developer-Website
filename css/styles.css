@@ -4,13 +4,16 @@
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757576;
-
+    --grisClaro: #DFE9F3;
 }
 
 html {
     font-size: 62.5%;
     box-sizing: border-box; /* Hack para 
     el manejo de box model */
+    background-image: 
+    linear-gradient(to top, var(--grisClaro) 0%,
+     var(--blanco) 100%);
 } 
 /* Hack para el manejo de box model */ 
 *, *:before, *:after {
@@ -20,6 +23,16 @@ html {
 body{
     font-size: 16px;
     font-family: 'Krub', sans-serif;
+}
+
+.sombra{
+    /* Sombra del elemento en el borde */
+    box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem; /* Espacio interior */
+    border-radius: 1rem; /* Esquinas redondeadas */
 }
 
 /* Tipografía */
@@ -97,7 +110,8 @@ Recomendado para Media Query
      con todo el tamaño de la pantalla */
     height: 450px; /* Alto del elemento hero */
     position: relative; /* El padre debe ser relative*/
- }
+    margin-bottom: 2rem; /* Margen inferior para separar el contenido */
+}
 
  .contenido-hero {
     position: absolute; /* El hijo debe ser absolute */
@@ -141,6 +155,43 @@ Recomendado para Media Query
     }
   }
 
+  /* Servicios */
 
+   @media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        /* grid-template-columns: 33.3% 33.3% 33.3% ; */
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem; /* distancia entre columnas */
+      }
+    }
 
+    .servicio{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .servicio h3 {
+        color: var(--secundario);
+        font-weight: normal;
+    }
+
+    .servicio p {
+        line-height: 2; /* Interlineado */
+        text-align: center;
+    }
+
+    .servicio .iconos {
+        height: 15rem;
+        width: 15rem;
+        background-color: var(--primario);
+        border-radius: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    
 
